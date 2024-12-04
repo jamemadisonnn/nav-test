@@ -1,0 +1,128 @@
+.navbar {
+    top: 0px;
+    width: 100%;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 101;
+}
+
+.link {
+    color: #ECEAE5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+}
+
+.clock {
+    color: grey;
+    font-size: 20;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.blink {
+    animation: blink 1s steps(1, start) infinite;
+}
+
+@keyframes blink {
+    50% {
+        visibility: hidden;
+    }
+}
+
+/* ========================================
+   Button Function
+======================================== */
+.close-button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20;
+    color: #ECEAE5;
+}
+
+/* Button Reset */
+button {
+    all: unset;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: transparent;
+}
+
+/* ========================================
+   Menu Button
+======================================== */
+.menu-button {
+    padding: 0px 15px;
+    color: #ECEAE5;
+    font-size: 10vw;
+    text-decoration: none;
+    border: solid 0.5px #ECEAE5;
+    transition: all 0.3s ease-in-out; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu-button:hover {
+    padding: 0px 40px;
+    color: black;
+    background: white;
+    border: solid 0.5px white;
+}
+
+/* ========================================
+   Menu
+======================================== */
+.menu {
+    background: black;
+}
+
+.spacer-50 {
+    height: 50px;
+}
+
+/* ========================================
+   Menu Info
+======================================== */
+.menu-info {
+    display: block !important; /* Ensure it stays block */
+}
+
+.menu-info-content {
+    display: block;
+}
+
+.menu-info-button {
+    font-size: 16px;
+    color: #ECEAE5;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.menu-info-button:hover {
+    background: white;
+    color: black;
+}
+
+
+.menu-content {
+    display: block;
+}
+
+.menu-button {
+    display: block;
+    margin: 16px 16px 0px 16px;
+    padding: 0px 15px;
+    color: #ECEAE5;
+    font-size: 7vw;
+    text-decoration: none;
+    border: solid 0.5px #ECEAE5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.spacer-50 {
+    padding-top: 1px; /* Prevent margin collapse */
+    height: 50px; /* Keeps the spacer's spacing intention */
+}
