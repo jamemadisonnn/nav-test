@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="" href="">  <!--Website > FAVICON-->
-    
-    <!--STYLE-->
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/MasterReset.css">
-    
-    <title>Website Tittle</title>
+    <link rel="icon" type="" href="">  <!-- Website > FAVICON -->
 
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- STYLE -->
+    <title>Website Title</title>
+    <style>
+
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <a class="link">NewYork Times</a>
+        <div class="flex">
+            <div class="clock" id="clock">Loading...</div>
+        </div>
+        <button class="menu-toggle">Menu</button>
+    </nav>
+    <img src="https://images.unsplash.com/photo-1732919258473-2e99efcfba02?q=80&w=2782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+
     <div class="overlay"></div>
 
     <div class="menu">
@@ -30,7 +40,7 @@
             <a class="menu-button" href="">PORTFOLIO</a>
             <a class="menu-button" href="">INFO</a>
             <a class="menu-button" href="">CONTACT</a>
-            <div class="spacer-200"></div>
+            <div class="spacer-100"></div>
             <div class="menu-info">
                 <div class="menu-info-content">
                     <a class="menu-info-button" href="">[+60] 11 - 11 388445</a>
@@ -43,4 +53,49 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Open and close the menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-button');  // Updated to match the class in HTML
+        const body = document.body;
+
+        menuToggle.addEventListener('click', function() {
+            menu.classList.add('open');
+            overlay.classList.add('active');
+            body.classList.add('menu-open'); // Disable body scroll when menu is open
+        });
+
+        closeBtn.addEventListener('click', function() {
+            menu.classList.remove('open');
+            overlay.classList.remove('active');
+            body.classList.remove('menu-open'); // Enable body scroll when menu is closed
+        });
+
+        overlay.addEventListener('click', function() {
+            menu.classList.remove('open');
+            overlay.classList.remove('active');
+            body.classList.remove('menu-open'); // Enable body scroll when menu is closed
+        });
+
+        // Live Clock Function for both clocks
+        function updateClock() {
+            const options = { timeZone: 'Asia/Kuala_Lumpur', hour: '2-digit', minute: '2-digit' };
+            const now = new Date().toLocaleTimeString('en-US', options);
+            const parts = now.split(':');
+            
+            document.getElementById('clock').innerHTML = `
+                ${parts[0]}<span class="blink">:</span>${parts[1]}
+            `;
+            document.getElementById('menu-clock').innerHTML = `
+                ${parts[0]}<span class="blink">:</span>${parts[1]}
+            `;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
+</html>

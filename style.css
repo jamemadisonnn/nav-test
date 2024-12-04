@@ -1,3 +1,6 @@
+/* ========================================
+   Navigation Menu
+======================================== */
 .navbar {
     top: 0px;
     width: 100%;
@@ -6,32 +9,97 @@
     align-items: center;
     justify-content: space-between;
     z-index: 101;
-    padding: 16px;
 }
-
+.button-menu {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20;
+    color: #ECEAE5;
+}
 .link {
     color: #ECEAE5;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    cursor: pointer;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer; /* Show pointer cursor on hover */
 }
-
 .clock {
     color: grey;
     font-size: 20;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 .blink {
     animation: blink 1s steps(1, start) infinite;
 }
-
 @keyframes blink {
     50% {
         visibility: hidden;
     }
 }
+button {
+    all: unset; /* Reset almost all inherited and default styles */
+    display: inline-block; /* Ensure proper layout behavior */
+    cursor: pointer; /* Show pointer cursor on hover */
+    background-color: transparent;
+    border: none; 
+    padding: 0;
+}
+.menu-toggle {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20;
+    color: #ECEAE5;
+}
 
-/* ========================================
+
+
+
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Dim the background */
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s; /* Smooth transition */
+    z-index: 999; /* Below the menu */
+  }
+  
+  /* Active states */
+  .menu.open {
+    top: 0; /* Menu slides down from the top */
+  }
+  
+  .overlay.active {
+    visibility: visible; /* Show overlay */
+    opacity: 1;
+  }
+
+
+  .menu {
+    position: fixed;
+    top: -100vh; /* Start off-screen from the top */
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent dark background */
+    transition: top 0.5s ease, backdrop-filter 0.5s ease; /* Smooth transition */
+    z-index: 1000; /* Ensures the menu sits above content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional shadow */
+    backdrop-filter: blur(10px); /* Blur effect */
+  }
+
+
+  img {
+    width: 100%;
+  }
+
+
+  /* ========================================
    Button Function
 ======================================== */
 .close-button {
@@ -84,8 +152,8 @@ button {
 .spacer-50 {
     height: 50px;
 }
-.spacer-200 {
-    height: 200px;
+.spacer-100 {
+    height: 100px;
 }
 
 /* ========================================
@@ -118,4 +186,6 @@ button {
     background: white;
     color: black;
 }
+
+
 
